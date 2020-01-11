@@ -1,0 +1,1 @@
+print('Danil, ty chto kreizi?')
