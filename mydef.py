@@ -1,7 +1,6 @@
 """ This is the code with games and calculator functions """
 
 import random
-import math
 
 class GAMES():
     """ This is the class with games(methods) """
@@ -39,24 +38,30 @@ class GAMES():
         if attempt == 0:
             return 'Game over'
 
-    def game_from_internet(self):
+    def my_game2(self):
         """ Tis is the 'Guess number' from the internet """
 
-        var1 = (math.trunc(random.uniform(1, 99)))
-        print("The number from 1 to 100 was thinking")
-        print("Your guess?")
-        var2 = int(input())
+        print('I was thinking of the number from 1 to 100, can you guess it?')
+        attempt = 10
+        larger = 'No, your number is too little.'
+        smaller = 'No, your number is too big. '
+        rightly = 'Yes, it is the number I was thinking of! '
+        number = random.randint(1, 100)
         if self.color == 0:
             return None
-        self += 1
-        if var1 > var2:
-            print("Guessing number is larger 'Var2' ")
-        elif var1 < var2:
-            print("Guessing number is smaller 'Var2' ")
-        else:
-            print("Your number is rightly 'Var1' ")
-
-        return None
+        while attempt != 0:
+            attempt -= 1
+            inputer = int(input())
+            if inputer != number:
+                if inputer > number:
+                    print(smaller)
+                elif inputer < number:
+                    print(larger)
+            else:
+                return rightly
+            print('You have', attempt, 'attempts')
+        if attempt == 0:
+            return 'Game over'
 
     def your_game_choise(self):
         """ This is the game choise method """
@@ -66,7 +71,7 @@ class GAMES():
         if inputer == 'My game':
             print(self.my_game1())
         elif inputer == 'Internet game':
-            print(self.game_from_internet())
+            print(self.my_game2())
         return "Thank, you!"
 
 class CALCULATORFUNCTIONS():
@@ -131,8 +136,8 @@ class CALCULATORFUNCTIONS():
             print(self.my_square_root(int(input())))
         return "Thank, you!"
 
-GAMES_OBJECT = GAMES(int(input()), int(input()), int(input()), int(input()))
-CALCULATOR_OBJECT = CALCULATORFUNCTIONS(int(input()), int(input()))
+GAMES_OBJECT = GAMES(1, 1, 1, 1)
+CALCULATOR_OBJECT = CALCULATORFUNCTIONS(1, 1)
 def games_or_calculator():
     """This is the choise class method"""
 
