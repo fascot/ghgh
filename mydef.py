@@ -66,15 +66,15 @@ class GAMES():
     def your_game_choise(self):
         """ This is the game choise method """
 
-        print('Choise the game: "My game" or "Internet game"?')
+        print('Choise the game: "First game" or "Second game"?')
         inputer = str(input())
-        if inputer == 'My game':
+        if inputer == 'First game':
             print(self.my_game1())
-        elif inputer == 'Internet game':
+        elif inputer == 'Second game':
             print(self.my_game2())
         return "Thank, you!"
 
-class CALCULATORFUNCTIONS():
+class CALCULATOR():
     """This is the calculator function class"""
 
     def __init__(self, afer, bufer):
@@ -137,7 +137,7 @@ class CALCULATORFUNCTIONS():
         return "Thank, you!"
 
 GAMES_OBJECT = GAMES(1, 1, 1, 1)
-CALCULATOR_OBJECT = CALCULATORFUNCTIONS(1, 1)
+CALCULATOR_OBJECT = CALCULATOR(1, 1)
 def games_or_calculator():
     """This is the choise class method"""
 
